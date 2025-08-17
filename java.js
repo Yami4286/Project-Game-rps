@@ -1,4 +1,6 @@
 console.log("Hello World");
+let  hs = 0;
+let ps = 0;
 
 function ComputerChoice(){
     let min = 1;
@@ -23,42 +25,54 @@ let Choice = prompt(" Rock \n  paper \n scissors \nEnter Your Choice");
 }
 
 function pc( num){
-     if (CpuChoice == 1){console.log("Cpu choice is: Rock")}else 
-        if (CpuChoice == 2){console.log("Cpu choice is: Paper")}else
-             if (CpuChoice == 3){console.log("Cpu Choice is Scissors")}
+     if (num == 1){console.log("Cpu choice is: Rock")}else 
+        if (num == 2){console.log("Cpu choice is: Paper")}else
+             if (num == 3){console.log("Cpu Choice is Scissors")}
 }
 
-function PlayRound( hs, ps){
+function PlayRound(){
 const HumChoice = PlayerChoice();
 const CpuChoice= ComputerChoice();
  pc(CpuChoice);
  if(HumChoice == 1 && CpuChoice == 2){
     
   console.log("Paper beats rock, Cpu wins");
- return ++ps;
+   ++ps;
+  console.log("Player Score: " + hs + " Cpu SCore: " + ps);
+ 
  } else if(HumChoice == 2 && CpuChoice == 3 ){
   console.log("Scissors beat Paper, Cpu Wins");
- return ++ps;
+   ++ps;
+   console.log("Player Score: " + hs + " Cpu SCore: " + ps);
+ 
  } else if(HumChoice == 3 && CpuChoice == 1){
   console.log("Rock beats scissors, Cpu wins");
-  return ++ps;
+    ++ps;
+  console.log("Player Score: " + hs + " Cpu SCore: " + ps);
+
  } else  if(HumChoice == 1 && CpuChoice == 3 ){
   console.log("Paper beats rock, Player wins");
-   return ++hs;
+     ++hs;
+  console.log("Player Score: " + hs + " Cpu SCore: " + ps);
+
  } else if(HumChoice == 2 && CpuChoice == 1){
   console.log("Paper beats rock, Player wins");
- return ++hs ;
+    ++hs;
+  console.log("Player Score: " + hs + " Cpu SCore: " + ps);
+
  } else if(HumChoice == 3 && CpuChoice == 2){
   console.log("Scissors beats Paper, Player wins");
-   return ++hs;
+  hs++;
+ console.log("Player Score: " + hs + " Cpu SCore: " + ps);
+
  } else if(HumChoice == CpuChoice){
     console.log("Draw");
-    return hs, ps;
+    
  }
 }
-const  hs = 0;
-const ps = 0;
 
+let i = 1;
+while( i <= 5){
 PlayRound();
-
-console.log("Player Score: " + hs + " Cpu SCore: " + ps);
+i++;
+}
