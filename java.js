@@ -4,7 +4,6 @@ function ComputerChoice(){
     let min = 1;
     let max = 4;
    let ans = Math.floor(Math.random()*(max-min)) + min;
-   pc(ans);
    return ans;
    // 1 reserve for the rock , 2 reserve for paper , 3 reserve for scissors
 }
@@ -32,7 +31,7 @@ function pc( num){
 function PlayRound( hs, ps){
 const HumChoice = PlayerChoice();
 const CpuChoice= ComputerChoice();
-
+ pc(CpuChoice);
  if(HumChoice == 1 && CpuChoice == 2){
     
   console.log("Paper beats rock, Cpu wins");
